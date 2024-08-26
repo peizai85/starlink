@@ -12,7 +12,7 @@ $apiUrl = $config['api_base_url'] . '/updateIp';
 // 准备上报数据
 $data = [
     'ip' => $externalIp,
-    'api_key' => $config['api_key'],
+    'token' => $config['api_key'],
 ];
 
 // 将数据转换为JSON格式
