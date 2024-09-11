@@ -1,3 +1,3 @@
 <?php
-echo "Hello, Proxidize!";
+echo "Hello, StarLink!";
 
