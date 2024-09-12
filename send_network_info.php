@@ -18,7 +18,9 @@ foreach ($interfaces as $interface) {
     $lines = explode("\n", trim($interface));
     $iface_name = strtok($lines[0], ' '); // 获取网卡名称
 
+    // 添加 netName 字段
     $interface_data = [
+        'netName' => $iface_name, // 添加网卡名称作为字段
         'mac_address' => null,
         'inet_addr' => null,
         'inet6_addr' => [],
@@ -57,7 +59,7 @@ foreach ($interfaces as $interface) {
     }
 
     // 将每个网卡的数据加入数组
-    $network_data[$iface_name] = $interface_data;
+    $network_data[] = $interface_data;
 }
 
 // 发送请求并获取响应
