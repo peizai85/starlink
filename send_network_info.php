@@ -22,7 +22,7 @@ foreach ($interfaces as $interface) {
 
 // 准备数据
 $data = [
-    'network_info' => network_data, // 包含网卡信息
+    'network_info' => $network_data, // 包含网卡信息
 ];
 
 // 发送请求并获取响应
