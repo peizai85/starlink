@@ -60,14 +60,9 @@ foreach ($interfaces as $interface) {
     $network_data[$iface_name] = $interface_data;
 }
 
-// 准备数据
-$data = [
-    'network_info' => $network_data, // 包含结构化网卡信息
-];
-
 // 发送请求并获取响应
 try {
-    $response = $client->sendRequest('/netInfo', $data);
+    $response = $client->sendRequest('/netInfo', $network_data);
     echo 'Response: ' . $response['msg'];
 } catch (Exception $e) {
     echo 'Error: ' . $e->getMessage();

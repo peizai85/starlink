@@ -13,16 +13,17 @@ class ApiClient
         $this->devicesId = $config['devices_id'];
     }
 
-    public function sendRequest($endpoint, $data = [])
+    public function sendRequest($endpoint, $data)
     {
         $url = $this->apiUrl . $endpoint;
 
         // 添加通用参数
-        $data['token'] = $this->token;
-        $data['devicesId'] = $this->devicesId;
-
+        $json = [];
+        $json['token'] = $this->token;
+        $json['devicesId'] = $this->devicesId;
+        $json['data'] = $data;
         // 转换为JSON格式
-        $jsonData = json_encode($data);
+        $jsonData = json_encode($json);
         print($jsonData);
 
         // 初始化cURL
