@@ -23,6 +23,7 @@ class ApiClient
 
         // 转换为JSON格式
         $jsonData = json_encode($data);
+        print($jsonData);
 
         // 初始化cURL
         $ch = curl_init($url);
