@@ -33,28 +33,28 @@ foreach ($interfaces as $interface) {
 
     foreach ($lines as $line) {
         if (preg_match('/HWaddr\s+([0-9A-Fa-f:]+)/', $line, $matches)) {
-            $interface_data['mac_address'] = $matches[1];
+            $interface_data['macAddress'] = $matches[1];
         }
-        if (preg_match('/inet addr:([\d\.]+)/', $line, $matches)) {
-            $interface_data['inet_addr'] = $matches[1];
+        if (preg_match('/inet addr:([\d.]+)/', $line, $matches)) {
+            $interface_data['inetAddr'] = $matches[1];
         }
         if (preg_match('/inet6 addr:\s*([a-fA-F0-9:\/]+)/', $line, $matches)) {
-            $interface_data['inet6_addr'][] = $matches[1];
+            $interface_data['inet6Addr'][] = $matches[1];
         }
         if (preg_match('/MTU:(\d+)/', $line, $matches)) {
             $interface_data['mtu'] = $matches[1];
         }
         if (preg_match('/RX packets:(\d+)/', $line, $matches)) {
-            $interface_data['rx_packets'] = $matches[1];
+            $interface_data['rxPackets'] = $matches[1];
         }
         if (preg_match('/TX packets:(\d+)/', $line, $matches)) {
-            $interface_data['tx_packets'] = $matches[1];
+            $interface_data['txPackets'] = $matches[1];
         }
         if (preg_match('/RX bytes:(\d+)/', $line, $matches)) {
-            $interface_data['rx_bytes'] = $matches[1];
+            $interface_data['rxBytes'] = $matches[1];
         }
         if (preg_match('/TX bytes:(\d+)/', $line, $matches)) {
-            $interface_data['tx_bytes'] = $matches[1];
+            $interface_data['txBytes'] = $matches[1];
         }
     }
 
