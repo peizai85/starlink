@@ -8,7 +8,7 @@ require 'handler/ApiClient.php';
 $client = new ApiClient($config);
 
 // 获取外网IP地址
-$externalIp = file_get_contents('https://api.ipify.org');
+$externalIp = file_get_contents('http://api.ipify.org');
 
 // 准备数据
 $data = [
