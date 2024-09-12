@@ -26,6 +26,8 @@ USB 无线网卡驱动： 如果你使用 USB 无线网卡，可能需要安装�
 bash
 复制代码
 opkg install kmod-usb-net-rndis kmod-usb-net-rtl8192cu
+opkg install kmod-usb-serial-option
+
 
 安装SSH密钥签名
 opkg install openssh-keygen
