@@ -11,7 +11,7 @@ nserver 8.8.8.8
 nserver 8.8.4.4
 proxy -p3129 -i192.168.2.188 -Deusb0
 
-2. 安装所需的驱动
+###### 安装所需的驱动
 根据你连接的 USB 网络设备，可能需要安装一些额外的驱动。以下是常见的驱动模块：
 
 USB 总线驱动：
@@ -29,7 +29,8 @@ opkg install kmod-usb-net-rndis kmod-usb-net-rtl8192cu
 opkg install kmod-usb-serial-option
 
 
-安装SSH密钥签名
+###### 安装SSH密钥签名
+opkg install openssh-client
 opkg install openssh-keygen
 
 #######3proxy配置
@@ -39,5 +40,13 @@ socks -p1080 -i0.0.0.0 -Deusb0
 allow * 192.168.2.0/24
 deny *
 log /var/log/3proxy.log D
+
+###### 计划任务
+*/3* * * * /usr/bin/php-cli /mnt/data/starlink/send_network_info.php
+*/5* * * * /usr/bin/php-cli /mnt/data/starlink/report_ip.php
+
+##### PHP相关
+ln -s /usr/bin/php-cli /usr/bin/php
+
 
 
